@@ -222,6 +222,20 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
