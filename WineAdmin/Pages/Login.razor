@@ -1,6 +1,7 @@
 ﻿@page "/"
 @layout NoMenuLayout
 @inject ToastService toastService
+@inject PreloadService loading
 @inject IUsersRepository _userRepository
 @inject NavigationManager Nav
 
@@ -63,6 +64,7 @@
 
     private async Task Authen()
     {
+        loading.Show(SpinnerColor.Dark);
         var user = await _userRepository.Authen(Username, Password);
         if (user != null)
         {
@@ -78,6 +80,8 @@
                     HelpText = $"{DateTime.Now}",
                 });
         }
+        
+        loading.Hide();
     }
 
     private void GoToDashboard(Users user)
