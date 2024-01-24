@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Shared\Toast.razor.bak" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Shared\Toast.razor.bak" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Blazor.Bootstrap" Version="1.10.5" />
   </ItemGroup>
 

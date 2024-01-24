@@ -3,3 +3,10 @@
 /WineAdmin/obj
 /Domain/bin
 /Domain/obj
+/WineWeb.Server/.vs
+/WineWeb.Server/bin
+/WineWeb.Server/obj
+/WineWeb.Client/bin
+/WineWeb.Client/obj
+/WineWeb.Shared/bin
+/WineWeb.Shared/obj

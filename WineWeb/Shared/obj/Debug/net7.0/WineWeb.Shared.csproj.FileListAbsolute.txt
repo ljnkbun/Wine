@@ -1,0 +1,12 @@
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\bin\Debug\net7.0\WineWeb.Shared.deps.json
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\bin\Debug\net7.0\WineWeb.Shared.dll
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\bin\Debug\net7.0\WineWeb.Shared.pdb
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.csproj.AssemblyReference.cache
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.AssemblyInfoInputs.cache
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.AssemblyInfo.cs
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.csproj.CoreCompileInputs.cache
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.dll
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\refint\WineWeb.Shared.dll
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\WineWeb.Shared.pdb
+D:\work\.Net\SHop\Wine\Wine\WineWeb\Shared\obj\Debug\net7.0\ref\WineWeb.Shared.dll
