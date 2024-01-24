@@ -60,12 +60,12 @@
 </div>
 
 @code {
-    string Username, Password;
+    string? Username, Password;
 
     private async Task Authen()
     {
         loading.Show(SpinnerColor.Dark);
-        var user = await _userRepository.Authen(Username, Password);
+        var user = await _userRepository.Authen(Username!, Password!);
         if (user != null)
         {
             GoToDashboard(user);
@@ -80,12 +80,12 @@
                     HelpText = $"{DateTime.Now}",
                 });
         }
-        
+        await Task.Delay(1000);
         loading.Hide();
     }
 
     private void GoToDashboard(Users user)
     {
-        Nav.NavigateTo("/account");
+        Nav.NavigateTo("/dashboard");
     }
 }
