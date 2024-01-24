@@ -4,6 +4,7 @@
 /Domain/bin
 /Domain/obj
 /WineWeb/.vs
+/WineWeb/Server/.vs
 /WineWeb/Server/bin
 /WineWeb/Server/obj
 /WineWeb/Client/.vs
