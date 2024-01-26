@@ -15,5 +15,9 @@
     <ProjectReference Include="..\Shared\WineWeb.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
 
 </Project>

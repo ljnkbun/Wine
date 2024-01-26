@@ -1,9 +1,59 @@
 ﻿@page "/users"
+@inject HttpClient Http
 
 <PageTitle>UsersManagement</PageTitle>
 
-<h1>Hello, world!</h1>
+<h3> UsersManagement</h3>
 
-Welcome to your new app.
+<h4 style="color:blue;">
+    Wants to Add New Employee? Click on <a href="/employee/create">Add Employee</a>
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Joining Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (@users == null)
+        {
+            <tr>
+                <td colspan="8" align="center">No Data Found</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var employee in @users)
+            {
+                <tr>
+                    <td width="10%">@employee.Code</td>
+                    <td width="25%">employee.FullName</td>
+                    <td width="10%">@employee.DOB.ToShortDateString()</td>
+                    <td width="15%">@employee.State</td>
+                    <td width="15%">@employee.City</td>
+                    <td width="10%">@employee.JoiningDate.ToShortDateString()</td>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private Users[]? users;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await this.FetEmployees();
+    }
+
+    private async Task FetEmployees()
+    {
+        users = await Http.GetFromJsonAsync<Users[]>("/api/employee/getemployees");
+    }
+}
