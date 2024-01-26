@@ -9,12 +9,12 @@
 
     <Sidebar @ref="sidebar"
              IconName="IconName.BootstrapFill"
-             Title="Blazor Bootstrap"
+             Title="Wine Administrator"
              DataProvider="SidebarDataProvider" />
 
     <main>
         <div class="bb-top-row px-4 d-flex justify-content-end">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <a href="/dashboard" target="_blank"><i class="bi bi-box-arrow-right"></i>Logout</a>
         </div>
 
         <article class="content px-4">
@@ -27,8 +27,6 @@
 </div>
 
 <Modal IsServiceModal="true" />
-<Preload />
-<Toasts class="p-3" AutoHide="true" Delay="4000" Placement="ToastsPlacement.TopRight" />
 
 @code {
     private Sidebar sidebar = default!;

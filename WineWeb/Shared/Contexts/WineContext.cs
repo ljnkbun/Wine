@@ -1,10 +1,9 @@
 ﻿using Core.Entities;
 using Core.Services;
-using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using WineWeb.Shared.Entities;
 
-namespace WineWeb.Server.Contexts
+namespace WineWeb.Shared.Contexts
 {
     public partial class WineContext : DbContext
     {

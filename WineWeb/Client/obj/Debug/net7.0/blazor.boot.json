@@ -8,10 +8,12 @@
   "resources": {
     "assembly": {
       "AutoMapper.dll": "sha256-IPLECjhzAo5JapVuuAB\/ZT5OGwiSRZEKxtY7EMNCH38=",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection.dll": "sha256-RFmP6C+\/wYl1ISrVBekC+K2zrBwqPDUwvi8dVw+tiUY=",
       "Azure.Core.dll": "sha256-bVqpNWSeRtduXc3XeKEzhDf0e5wtXQXAITXFg4LLm+Q=",
       "Azure.Identity.dll": "sha256-Zmlzr5CM+CpJVTCy6iMHQATerUReG7Ru91pePIeaYyE=",
       "BlazorBootstrap.dll": "sha256-8O9s7pfpcP+Pf0+Q3mcwiAmMPWfJLLR+LoxJE\/yRiL8=",
       "FluentValidation.dll": "sha256-a5AGSn7yn49KxPRPP71L8sf8lBnNKD\/lJXn8C6v3bEU=",
+      "FluentValidation.DependencyInjectionExtensions.dll": "sha256-dY+A1mRFdW0F0o9TZ7ny2kl2U8sc8Y\/YdiOMimg07Lk=",
       "MediatR.dll": "sha256-7fMFlH4tD4mAMFzo+0dMB2r908+dmPOe9B6\/9JQG\/jo=",
       "MediatR.Contracts.dll": "sha256-wmATBKqdFcUaVD4cMwA2jGSsOGM+cne7g1oE9o3famE=",
       "Microsoft.AspNetCore.Antiforgery.dll": "sha256-Y2IlVPGCtCVesQ9wWBBKZPWL8cKX3SC0xk7hL9rkrY0=",
@@ -79,7 +81,7 @@
       "Microsoft.Extensions.Localization.dll": "sha256-sc5DBDKFkSdGoeRc\/MGlGvCMw4R2\/YCwih4FqktxYVQ=",
       "Microsoft.Extensions.Localization.Abstractions.dll": "sha256-EQtXxKTSfQ17pn8jBWgy2LoUm5WWI4xbKBV+++3iUxM=",
       "Microsoft.Extensions.Logging.dll": "sha256-WMsuY8rhtg+vvssGFSR7ZLKhqYPAzOi538IXMoiJ6bI=",
-      "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-7mzUlhcvGxpAVO4h\/Tka7P\/8IXF9ZsHkGt0fp5aufkU=",
+      "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-7zoKnNaWqWOrjF2eX3dFetJL+I03xqvCzORtFB4Ws08=",
       "Microsoft.Extensions.ObjectPool.dll": "sha256-UCVqOmu+z9\/M5Wahsgr7zKRWdGQWNvXGWLlEa1gkFuw=",
       "Microsoft.Extensions.Options.dll": "sha256-gcHJrSv1wTqvF9SyWTEKcbiShn4mkgfnm9+tRQr4OqY=",
       "Microsoft.Extensions.Primitives.dll": "sha256-q4ruoDSCjV\/QJY9ZkzV6uxvEvZUVrDbyUjU3SSh5SlE=",
@@ -97,7 +99,6 @@
       "Microsoft.Net.Http.Headers.dll": "sha256-P66ftDrXwc6ayND8uYzIk0CPQy1GjNZAPHx9RMhi3V4=",
       "Microsoft.SqlServer.Server.dll": "sha256-qdyhtCvIdflmt4ssCIDmK4OPDtZWcWbX8fB65LduxL8=",
       "Microsoft.Win32.SystemEvents.dll": "sha256-yklb9shrfwktYkkoEBmFqUFTLRSdzYrP6hcPilO+iFA=",
-      "MySqlConnector.dll": "sha256-46SXhaQ8w3XQBzQCkHHdefCbWlcDVWesCZENcyRPgkA=",
       "Newtonsoft.Json.dll": "sha256-gkIipvi93hhq6PE+WvoKU82xCfBcfl2PTHNjD3enxt4=",
       "Newtonsoft.Json.Bson.dll": "sha256-tgbl3XemJCyh8d9xfrU9lQWuVpBDMLl1wI1PLb6MMxk=",
       "System.Configuration.ConfigurationManager.dll": "sha256-0nS91x919QBfyuwCiSH3HYnLbWIgItdNLgeJejodFBo=",
@@ -279,17 +280,17 @@
       "mscorlib.dll": "sha256-8OmdVHzoN7xteY5ehp0L8R17I9QxFkH2lUVHFuslE0s=",
       "netstandard.dll": "sha256-urq+e2ZQXxmOWMRxTR92529HnUVu6+kyVnfF6SoLad8=",
       "System.Private.CoreLib.dll": "sha256-ixnF\/wVKLHZM1N0lfJufpZ41EC2LvvyiSqdW43h3Xew=",
-      "Core.dll": "sha256-6nXbHfce4xUMeTYS6prRjNc5vbe96+4SNMsb\/IATPxc=",
-      "WineWeb.Shared.dll": "sha256-LeG9e9SCfdYabeVQ+HzWcFZsxvwESWNqjjP\/q30KlVc=",
-      "WineWeb.Client.dll": "sha256-hcl+XmzbmAvJKS5QEb5WavJy2GCe7tyhjnSy4rg53PE="
+      "Core.dll": "sha256-WGuxsd903uJNmOMxvUdSWdroHl8ofEZ2hP89KgpbOD4=",
+      "WineWeb.Shared.dll": "sha256-BZaXA0x3OVe6Dkl55wuCYu0xNNxvQ7flDsGhLvMtZHk=",
+      "WineWeb.Client.dll": "sha256-dgkyPbAp2i+kF3+j7pZFcwEdkxZ3uDdz69o9pzCyB1M="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "WineWeb.Shared.pdb": "sha256-nUhJ1IC7zoC6ZaM4luED8K+x4uloBaox7oxC3rkr6X4=",
-      "Core.pdb": "sha256-5qEyhkHBztAPcHYR68uUQxo6ObiySRtOU2OnIBgJ3b0=",
-      "WineWeb.Client.pdb": "sha256-LlbTLBCrAesob5FsRm6fC0dksrGT6yz+6EQ2jNDzb7U="
+      "WineWeb.Shared.pdb": "sha256-h\/snONOelGB\/8\/l2O3QhgpAsQbUwnjJ4kWECiAEze6U=",
+      "Core.pdb": "sha256-LGBBZ3Jrk6mdK+aMSEmqn0oFlDhjqffHCfedNNxG6pg=",
+      "WineWeb.Client.pdb": "sha256-71hM9UZoQZ75JO\/C0GZPXnDeuVMG+sVPCz7ssTsbaxw="
     },
     "runtime": {
       "dotnet.7.0.12.cd75lmyo37.js": "sha256-cPJgWy8SjMaYFeimGkYy23ls+rDZVmoC\/eMoHpqRc+4=",

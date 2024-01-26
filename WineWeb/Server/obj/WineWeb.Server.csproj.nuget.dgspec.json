@@ -145,7 +145,15 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[11.9.0, )"
             },
@@ -315,9 +323,9 @@
               "target": "Package",
               "version": "[7.0.15, )"
             },
-            "MySqlConnector": {
+            "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[2.3.5, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

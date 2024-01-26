@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+using WineWeb.Shared.Contexts;
+using WineWeb.Shared.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Read Configuration from appSettings
@@ -8,9 +13,11 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 // Add services to the container.
+builder.Services.AddInfrastructure(configuration);
+builder.Services.AddApplication();
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddJob();
 
 
 builder.Services.AddCors(options =>
@@ -23,6 +30,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+builder.Services.AddControllersWithViews().AddJsonOptions(opts => opts.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddRazorPages();
 
 
 var app = builder.Build();
@@ -54,5 +64,13 @@ app.UseRouting();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<WineContext>();
+    db.Database.Migrate();
+}
+
 
 app.Run();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jms6b2MbW8rT95d2niT87dQpAh6zvJSYpwIs+MRsOCo=",
+  "Hash": "D5ZshC9ZWftzmQIfmVbmE6wPJb845PxPuxZgu/1yFSQ=",
   "Source": "WineWeb.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\automapper\\12.0.1\\lib\\netstandard2.1\\AutoMapper.dll"
+    },
+    {
+      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+      "SourceId": "WineWeb.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\lib\\netstandard2.1\\AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Azure.Core.dll",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\7.0.12\\runtimes\\browser-wasm\\native\\dotnet.wasm"
+    },
+    {
+      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\FluentValidation.DependencyInjectionExtensions.dll",
+      "SourceId": "WineWeb.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/FluentValidation.DependencyInjectionExtensions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\lib\\netstandard2.1\\FluentValidation.DependencyInjectionExtensions.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\FluentValidation.dll",
@@ -1510,7 +1544,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\lib\\net7.0\\Microsoft.Extensions.Logging.Abstractions.dll"
+      "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\lib\\net7.0\\Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.dll",
@@ -1902,23 +1936,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\7.0.12\\runtimes\\browser-wasm\\lib\\net7.0\\mscorlib.dll"
-    },
-    {
-      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MySqlConnector.dll",
-      "SourceId": "WineWeb.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/MySqlConnector.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\linh.hoangtuan\\.nuget\\packages\\mysqlconnector\\2.3.5\\lib\\net7.0\\MySqlConnector.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\netstandard.dll",
@@ -5712,6 +5729,23 @@
       "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Compression.ZipFile.dll"
     },
     {
+      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\5tJn9RoV.gz",
+      "SourceId": "WineWeb.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/FluentValidation.DependencyInjectionExtensions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\FluentValidation.DependencyInjectionExtensions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\FluentValidation.DependencyInjectionExtensions.dll"
+    },
+    {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\5xCgm5P9.gz",
       "SourceId": "WineWeb.Client",
       "SourceType": "Computed",
@@ -6681,6 +6715,23 @@
       "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
     },
     {
+      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\E6T77JRR.gz",
+      "SourceId": "WineWeb.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/AutoMapper.Extensions.Microsoft.DependencyInjection.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+    },
+    {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\e8Sh6o2A.gz",
       "SourceId": "WineWeb.Client",
       "SourceType": "Computed",
@@ -6749,23 +6800,6 @@
       "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Logging.dll"
     },
     {
-      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\eCpR0DaY.gz",
-      "SourceId": "WineWeb.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/MySqlConnector.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MySqlConnector.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MySqlConnector.dll"
-    },
-    {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\eCWLdQQe.gz",
       "SourceId": "WineWeb.Client",
       "SourceType": "Computed",
@@ -6815,6 +6849,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.DataProtection.Abstractions.dll"
+    },
+    {
+      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\eH3+Ll8Q.gz",
+      "SourceId": "WineWeb.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Logging.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\f6+iBXAI.gz",
@@ -8396,23 +8447,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.Requests.dll"
-    },
-    {
-      "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\r4svaosa.gz",
-      "SourceId": "WineWeb.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.Extensions.Logging.Abstractions.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "Identity": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\R54Gq9xV.gz",
