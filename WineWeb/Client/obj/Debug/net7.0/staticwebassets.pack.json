@@ -1,43 +1,43 @@
 {
   "Files": [
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\Pages\\Login.razor.js",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\Pages\\Login.razor.js",
       "PackagePath": "staticwebassets\\Pages\\Login.razor.js"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\BrskZWmg.gz",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\build-gz\\rVikZHKY.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\WineWeb.Client.styles.css",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\WineWeb.Client.styles.css",
       "PackagePath": "staticwebassets\\WineWeb.Client.styles.css"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\css\\app.css",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\favicon.png",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\icon-192.png",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\images\\icons\\favicon.ico",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\images\\icons\\favicon.ico",
       "PackagePath": "staticwebassets\\images\\icons\\favicon.ico"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\images\\img-01.png",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\images\\img-01.png",
       "PackagePath": "staticwebassets\\images\\img-01.png"
     },
     {
-      "Id": "D:\\work\\.Net\\SHop\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\index.html",
+      "Id": "D:\\work\\Wine\\Wine\\WineWeb\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

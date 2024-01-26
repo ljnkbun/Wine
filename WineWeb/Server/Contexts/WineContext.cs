@@ -1,7 +1,8 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Core.Entities;
+using Core.Services;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using WineWeb.Shared.Entities;
-using WineWeb.Shared.Services;
 
 namespace WineWeb.Server.Contexts
 {

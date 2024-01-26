@@ -1,4 +1,6 @@
-﻿namespace WineWeb.Shared.Entities
+﻿using Core.Entities;
+
+namespace WineWeb.Shared.Entities
 {
     public class Users : BaseEntity
     {

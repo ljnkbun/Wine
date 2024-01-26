@@ -1,4 +1,4 @@
-﻿namespace WineWeb.Shared.Services.Implements
+﻿namespace Core.Services.Implements
 {
     public class DateTimeService : IDateTimeService
     {

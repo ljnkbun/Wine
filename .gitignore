@@ -12,3 +12,5 @@
 /WineWeb/Client/obj
 /WineWeb/Shared/bin
 /WineWeb/Shared/obj
+/WineWeb/Core/bin
+/WineWeb/Core/obj

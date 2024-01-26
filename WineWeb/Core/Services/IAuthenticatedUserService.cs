@@ -1,4 +1,4 @@
-﻿namespace WineWeb.Shared.Services
+﻿namespace Core.Services
 {
     public interface IAuthenticatedUserService
     {
