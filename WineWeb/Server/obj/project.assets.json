@@ -3735,7 +3735,6 @@
         "dependencies": {
           "Core": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "7.0.15",
           "Microsoft.Extensions.DependencyInjection": "7.0.0"
         },
         "compile": {

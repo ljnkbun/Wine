@@ -282,7 +282,7 @@
       "System.Private.CoreLib.dll": "sha256-ixnF\/wVKLHZM1N0lfJufpZ41EC2LvvyiSqdW43h3Xew=",
       "Core.dll": "sha256-WGuxsd903uJNmOMxvUdSWdroHl8ofEZ2hP89KgpbOD4=",
       "WineWeb.Shared.dll": "sha256-BZaXA0x3OVe6Dkl55wuCYu0xNNxvQ7flDsGhLvMtZHk=",
-      "WineWeb.Client.dll": "sha256-dgkyPbAp2i+kF3+j7pZFcwEdkxZ3uDdz69o9pzCyB1M="
+      "WineWeb.Client.dll": "sha256-o3zKSpwsKwtrud0wc5RDPZXtEmr+22SNOVpIMD8XASc="
     },
     "extensions": null,
     "lazyAssembly": null,
@@ -290,7 +290,7 @@
     "pdb": {
       "WineWeb.Shared.pdb": "sha256-h\/snONOelGB\/8\/l2O3QhgpAsQbUwnjJ4kWECiAEze6U=",
       "Core.pdb": "sha256-LGBBZ3Jrk6mdK+aMSEmqn0oFlDhjqffHCfedNNxG6pg=",
-      "WineWeb.Client.pdb": "sha256-71hM9UZoQZ75JO\/C0GZPXnDeuVMG+sVPCz7ssTsbaxw="
+      "WineWeb.Client.pdb": "sha256-YumipHHksE6zz\/zqF7jqjmYC85RFniYQedwscWvuV7k="
     },
     "runtime": {
       "dotnet.7.0.12.cd75lmyo37.js": "sha256-cPJgWy8SjMaYFeimGkYy23ls+rDZVmoC\/eMoHpqRc+4=",

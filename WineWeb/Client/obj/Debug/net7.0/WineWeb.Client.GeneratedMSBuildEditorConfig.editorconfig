@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/work/Wine/Wine/WineWeb/Client/Pages/Category.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/work/Wine/Wine/WineWeb/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +34,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/work/Wine/Wine/WineWeb/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work/Wine/Wine/WineWeb/Client/Pages/Location.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work/Wine/Wine/WineWeb/Client/Pages/Role.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work/Wine/Wine/WineWeb/Client/Pages/UserRole.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclJvbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work/Wine/Wine/WineWeb/Client/Pages/Users.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/work/Wine/Wine/WineWeb/Client/Shared/NoMenuLayout.razor]
