@@ -1,6 +1,4 @@
-using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using WineWeb.Shared.Contexts;
 using WineWeb.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -66,11 +64,11 @@ app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<WineContext>();
-    db.Database.Migrate();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<WineContext>();
+//    db.Database.Migrate();
+//}
 
 
 app.Run();
