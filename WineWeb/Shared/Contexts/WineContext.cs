@@ -2,6 +2,7 @@
 using Core.Services;
 using Microsoft.EntityFrameworkCore;
 using WineWeb.Shared.Entities;
+using WineWeb.Shared.TypeConfigurations;
 
 namespace WineWeb.Shared.Contexts
 {
@@ -41,12 +42,17 @@ namespace WineWeb.Shared.Contexts
 
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.ApplyConfiguration(new LocationConfiguration());
-            //modelBuilder.ApplyConfiguration(new ArticleBarcodeConfiguration());
+            modelBuilder.ApplyConfiguration(new UsersConfiguration());
+            modelBuilder.ApplyConfiguration(new LocationConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
         }
     }
 }

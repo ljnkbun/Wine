@@ -1,0 +1,69 @@
+﻿@page "/users"
+@using System.Net.Http.Json;
+@using WineWeb.Shared.Entities;
+@inject HttpClient Http
+
+<PageTitle>UsersManagement</PageTitle>
+
+<h3> UsersManagement</h3>
+
+<Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="/users/detail"> Add </Button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Full Name</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>CreateDate</th>
+            <th>UpdateDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (@users == null)
+        {
+            <tr>
+                <td colspan="8" align="center">No Data Found</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var users in @users)
+            {
+                <tr>
+                    <td width="10%">@users.Code</td>
+                    <td width="25%">@users.Name</td>
+                    <td width="10%">@users.UserName></td>
+                    <td width="15%">@users.Password</td>
+                    <td width="15%">@users.CreateDate?.ToShortDateString()</td>
+                    <td width="10%">@users.UpdateDate?.ToShortDateString()</td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private Users[]? users;
+
+    private int PageNumber { get; set; }
+    private int PageSize { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await FetchUserss();
+    }
+
+    private async Task FetchUserss()
+    {
+        var url = "/api/Users";
+
+        url = $"{url}?PageSize={PageSize}&PageNumber={PageNumber}";
+
+        var result = await Http.GetFromJsonAsync<Response<Users[]>>(url);
+        users = result?.Data;
+    }
+}

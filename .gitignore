@@ -14,3 +14,7 @@
 /WineWeb/Shared/obj
 /WineWeb/Core/bin
 /WineWeb/Core/obj
+
+# Ignore any files in /bin and /obj Folders
+**/bin/*
+**/obj/*

@@ -1,0 +1,84 @@
+﻿@page "/users/detail"
+@using System.Net.Http.Json;
+@using WineWeb.Shared.Entities;
+@inject HttpClient Http
+
+<h3>Create User</h3>
+<hr />
+
+<div style="width:60%;">
+
+    <EditForm Model="User" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+
+        <div class="row mb-3">
+            <label for="inputCode" class="col-sm-2 col-form-label">Code</label>
+            <div class="col-sm-10">
+                <InputText type="text" class="form-control" id="empcode" @bind-Value="@User.Code" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => User.Code)" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Name" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => User.Name)" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="inputName" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.UserName" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => User.Password)" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="inputName" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Password" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => User.Password)" />
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label for="inputName" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Email" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => User.Email)" />
+            </div>
+        </div>
+
+        <a class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true" href="users">Back To Employee List</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        @if (ReadOnlyMode == false)
+        {
+            <button type="submit" class="btn btn-primary">@(UserId > 0 ? "Update" : "Save")</button>
+        }
+    </EditForm>
+</div>
+
+@code {
+    public int UserId { get; set; }
+    public Users User { get; set; }
+    public bool ReadOnlyMode { get; set; } = false;
+
+    public EventCallback OnValidSubmit { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        User = await GetUser(UserId);
+    }
+
+    private async Task<Users> GetUser(int userId)
+    {
+        var url = $"/api/users/{userId}";
+
+        var result = await Http.GetFromJsonAsync<Response<Users>>(url);
+        return result?.Data ?? new();
+    }
+}
