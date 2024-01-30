@@ -1,0 +1,79 @@
+﻿@inject HttpClient Http
+@inject NavigationManager Nav
+@inject ToastService toastService
+@inject PreloadService loading
+
+<Modal @ref="modal" title="Modal title" IsVerticallyCentered="true">
+    <BodyTemplate>
+        @Message
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="ButtonColor.Success" @onclick="Confirmed">Confirmed</Button>
+    </FooterTemplate>
+</Modal>
+
+<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Vertically centered modal</Button>
+
+@code {
+    public Modal modal = default!;
+
+    [Parameter] public string Message { get; set; }
+    [Parameter] public string Url { get; set; }
+    [Parameter] public string CusFunc { get; set; }
+
+    public async Task OnShowModalClick()
+    {
+        await modal.ShowAsync();
+    }
+
+    public async Task OnHideModalClick()
+    {
+        await modal.HideAsync();
+    }
+
+    public async Task Confirmed()
+    {
+        loading.Show(SpinnerColor.Dark);
+        var result = await Http.DeleteAsync(Url);
+        if (result != null && result.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            switch (CusFunc)
+            {
+                case "User":
+                    toastService.Notify(new()
+                        {
+                            Message = "Delete User Successful",
+                            Type = ToastType.Danger,
+                            Title = "Delete User Successful",
+                            HelpText = $"{DateTime.Now}",
+                        });
+                    break;
+                default:
+                    toastService.Notify(new()
+                        {
+                            Message = "Delete User Successful",
+                            Type = ToastType.Danger,
+                            Title = "Delete User Successful",
+                            HelpText = $"{DateTime.Now}",
+                        });
+                    break;
+            }
+
+            Nav.NavigateTo(Nav.Uri, true);
+        }
+        else
+        {
+            toastService.Notify(new()
+                {
+                    Message = "Delete Failed",
+                    Type = ToastType.Danger,
+                    Title = "Delete Failed",
+                    HelpText = $"{DateTime.Now}",
+                });
+
+        }
+        await OnHideModalClick();
+        loading.Hide();
+    }
+}

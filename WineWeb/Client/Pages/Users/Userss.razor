@@ -2,6 +2,8 @@
 @using System.Net.Http.Json;
 @using WineWeb.Shared.Entities;
 @inject HttpClient Http
+@inject PreloadService loading
+@inject ToastService toastService
 
 <PageTitle>UsersManagement</PageTitle>
 
@@ -29,16 +31,25 @@
         }
         else
         {
-            @foreach (var users in @users)
+            @foreach (var user in @users)
             {
                 <tr>
-                    <td width="10%">@users.Code</td>
-                    <td width="25%">@users.Name</td>
-                    <td width="10%">@users.UserName></td>
-                    <td width="15%">@users.Password</td>
-                    <td width="15%">@users.CreateDate?.ToShortDateString()</td>
-                    <td width="10%">@users.UpdateDate?.ToShortDateString()</td>
+                    <td width="5%">@user.Code</td>
+                    <td width="25%">@user.Name</td>
+                    <td width="10%">@user.UserName</td>
+                    <td width="15%">@user.Password</td>
+                    <td width="15%">@user.CreateDate?.ToShortDateString()</td>
+                    <td width="10%">@user.UpdateDate?.ToShortDateString()</td>
+                    <td width="10%">
+                        <div>
+                            <Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="@($"/users/detail/{user.Id}")" Model="@user"> Edit </Button>
+                            <Button Type="ButtonType.Button" Color="ButtonColor.Danger" Outline="true" Model="@modal"
+                            @onclick="()=>{ TargetId=user.Id;modal.OnShowModalClick();}">
+                                Delete
+                            </Button>
+                        </div>
 
+                    </td>
                 </tr>
             }
             <Pagination ActivePageNumber="@PageNumber"
@@ -47,6 +58,7 @@
         }
     </tbody>
 </table>
+<ConfirmDelete Message="Do you comfirmed?" Url="@($"/api/users/{TargetId}")" CusFunc="User" @ref="modal" />
 
 @code {
     private Users[]? users;
@@ -54,6 +66,10 @@
     public int PageNumber { get; set; } = 1;
     public int PageSize { get; set; } = 10;
     public int TotalPage { get; set; }
+
+    public int TargetId { get; set; }
+
+    private ConfirmDelete modal { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
@@ -63,11 +79,15 @@
 
     private async Task FetchUserss()
     {
+        loading.Show(SpinnerColor.Dark);
         var url = "/api/Users";
 
         url = $"{url}?PageSize={PageSize}&PageNumber={PageNumber}";
 
         var result = await Http.GetFromJsonAsync<Response<Users[]>>(url);
         users = result?.Data;
+
+        loading.Hide();
     }
+
 }
