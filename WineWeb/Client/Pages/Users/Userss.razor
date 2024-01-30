@@ -41,6 +41,9 @@
 
                 </tr>
             }
+            <Pagination ActivePageNumber="@PageNumber"
+                        TotalPages="@TotalPage"
+                        PageChanged="FetchUserss" />
         }
     </tbody>
 </table>
@@ -48,8 +51,9 @@
 @code {
     private Users[]? users;
 
-    private int PageNumber { get; set; }
-    private int PageSize { get; set; }
+    public int PageNumber { get; set; } = 1;
+    public int PageSize { get; set; } = 10;
+    public int TotalPage { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
