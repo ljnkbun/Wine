@@ -1,75 +1,50 @@
-﻿@page "/users/detail"
-@page "/users/detail/{UserId:int}"
+﻿@page "/Location/detail"
+@page "/Location/detail/{LocationId:int}"
 @using System.Net.Http.Json;
 @using WineWeb.Shared.Entities;
 @inject HttpClient Http
 @inject ToastService toastService
 @inject PreloadService loading
 
-<h3> User Detail</h3>
+<h3> Location Detail</h3>
 <hr />
 
 <div style="width:60%;">
 
-    <EditForm Model="User" OnValidSubmit="OnValidSubmit">
+    <EditForm Model="Location" OnValidSubmit="OnValidSubmit">
         <DataAnnotationsValidator />
 
         <div class="row mb-3">
             <label for="inputCode" class="col-sm-2 col-form-label">Code</label>
             <div class="col-sm-10">
-                <InputText type="text" class="form-control" id="empcode" @bind-Value="@User.Code" disabled=@ReadOnlyMode />
-                <ValidationMessage For="@(() => User.Code)" />
+                <InputText type="text" class="form-control" id="empcode" @bind-Value="@Location.Code" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => Location.Code)" />
             </div>
         </div>
         <div class="row mb-3">
             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Name" disabled=@ReadOnlyMode />
-                <ValidationMessage For="@(() => User.Name)" />
+                <InputText type="text" class="form-control" id="empname" @bind-Value="@Location.Name" disabled=@ReadOnlyMode />
+                <ValidationMessage For="@(() => Location.Name)" />
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label for="inputName" class="col-sm-2 col-form-label">Username</label>
-            <div class="col-sm-10">
-                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.UserName" disabled=@ReadOnlyMode />
-                <ValidationMessage For="@(() => User.Password)" />
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="inputName" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Password" disabled=@ReadOnlyMode />
-                <ValidationMessage For="@(() => User.Password)" />
-            </div>
-        </div>
-
-
-        <div class="row mb-3">
-            <label for="inputName" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <InputText type="text" class="form-control" id="empname" @bind-Value="@User.Email" disabled=@ReadOnlyMode />
-                <ValidationMessage For="@(() => User.Email)" />
-            </div>
-        </div>
-
-        <a class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true" href="users">Back To User List</a>
+        <a class="btn btn-danger" tabindex="-1" Location="button" aria-disabled="true" href="Locations">Back To Location List</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         @if (ReadOnlyMode == false)
         {
             <Button @ref="btnSave" Color="ButtonColor.Success" Outline="true" Size="Size.Medium" @onclick="SubmitForm">
                 <Icon Name="IconName.Activity"></Icon>
-                @(UserId > 0 ? "Update" : "Save")
+                @(LocationId > 0 ? "Update" : "Save")
             </Button>
         }
     </EditForm>
 </div>
 
 @code {
-    [Parameter] public int UserId { get; set; }
-    public Users User { get; set; } = new();
+    [Parameter] public int LocationId { get; set; }
+    public WineWeb.Shared.Entities.Locations Location { get; set; } = new();
     public bool ReadOnlyMode { get; set; } = false;
 
     public EventCallback OnValidSubmit { get; set; }
@@ -78,38 +53,39 @@
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        User = await GetUser(UserId);
+        Location = await GetLocation(LocationId);
     }
 
-    private async Task<Users> GetUser(int userId)
+    private async Task<WineWeb.Shared.Entities.Locations> GetLocation(int LocationId)
     {
-        var url = $"/api/users/{userId}";
+        var url = $"/api/Locations/{LocationId}";
 
-        var result = await Http.GetFromJsonAsync<Response<Users>>(url);
+        var result = await Http.GetFromJsonAsync<Response<WineWeb.Shared.Entities.Locations>>(url);
         return result?.Data ?? new();
     }
 
     private async Task<int> SubmitForm()
     {
         btnSave?.ShowLoading("Loading...");
-        if (UserId > 0)
+
+        if (LocationId > 0)
         {
-            return await UpdateUser();
+            return await UpdateLocation();
         }
         else
         {
-            return await CreateUser();
+            return await CreateLocation();
         }
 
     }
 
-    private async Task<int> UpdateUser()
+    private async Task<int> UpdateLocation()
     {
         btnSave?.ShowLoading("Loading...");
         var rss = -1;
         try
         {
-            var response = await Http.PutAsJsonAsync($"api/users/{UserId}", User);
+            var response = await Http.PutAsJsonAsync($"api/Locations/{LocationId}", Location);
             var rs = await response.Content.ReadFromJsonAsync<Response<int>>();
             if (!rs.Succeeded)
             {
@@ -117,9 +93,9 @@
                 {
                     toastService.Notify(new()
                         {
-                            Message = $"Update User is failed: {error.Message}",
+                            Message = $"Update Location is failed: {error.Message}",
                             Type = ToastType.Danger,
-                            Title = "Update User failed",
+                            Title = "Update Location failed",
                             HelpText = $"{DateTime.Now}",
                         });
                 }
@@ -128,9 +104,9 @@
             {
                 toastService.Notify(new()
                     {
-                        Message = "Update User is successful",
+                        Message = "Update Location is successful",
                         Type = ToastType.Success,
-                        Title = "Update User success",
+                        Title = "Update Location success",
                         HelpText = $"{DateTime.Now}",
                     });
                 rss = rs.Data;
@@ -141,9 +117,9 @@
         {
             toastService.Notify(new()
                 {
-                    Message = $"Update User is failed: Error: {ex.Message}",
+                    Message = $"Update Location is failed: Error: {ex.Message}",
                     Type = ToastType.Danger,
-                    Title = "Update User failed",
+                    Title = "Update Location failed",
                     HelpText = $"{DateTime.Now}",
                 });
         }
@@ -151,13 +127,13 @@
         return rss;
     }
 
-    private async Task<int> CreateUser()
+    private async Task<int> CreateLocation()
     {
         btnSave?.ShowLoading("Loading...");
         var rss = -1;
         try
         {
-            var response = await Http.PostAsJsonAsync("api/users", User);
+            var response = await Http.PostAsJsonAsync("api/Locations", Location);
             var rs = await response.Content.ReadFromJsonAsync<Response<int>>();
 
             if (!rs.Succeeded)
@@ -166,9 +142,9 @@
                 {
                     toastService.Notify(new()
                         {
-                            Message = $"Create User is failed: {error.Message}",
+                            Message = $"Create Location is failed: {error.Message}",
                             Type = ToastType.Danger,
-                            Title = "Create User failed",
+                            Title = "Create Location failed",
                             HelpText = $"{DateTime.Now}",
                         });
                 }
@@ -177,9 +153,9 @@
             {
                 toastService.Notify(new()
                     {
-                        Message = "Create User is successful",
+                        Message = "Create Location is successful",
                         Type = ToastType.Success,
-                        Title = "Create User success",
+                        Title = "Create Location success",
                         HelpText = $"{DateTime.Now}",
                     });
                 rss = rs.Data;
@@ -190,9 +166,9 @@
         {
             toastService.Notify(new()
                 {
-                    Message = $"Create User is failed: Error: {ex.Message}",
+                    Message = $"Create Location is failed: Error: {ex.Message}",
                     Type = ToastType.Danger,
-                    Title = "Create User failed",
+                    Title = "Create Location failed",
                     HelpText = $"{DateTime.Now}",
                 });
         }

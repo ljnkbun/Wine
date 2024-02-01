@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WineWeb.Shared.Contexts;
 
@@ -11,9 +12,11 @@ using WineWeb.Shared.Contexts;
 namespace WineWeb.Shared.Migrations
 {
     [DbContext(typeof(WineContext))]
-    partial class WineContextModelSnapshot : ModelSnapshot
+    [Migration("20240201075338_modifyTbl")]
+    partial class modifyTbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

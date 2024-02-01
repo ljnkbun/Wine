@@ -4,9 +4,9 @@ using WineWeb.Shared.Entities;
 
 namespace WineWeb.Shared.TypeConfigurations
 {
-    public class LocationConfiguration : BaseConfiguration<Location>
+    public class LocationConfiguration : BaseConfiguration<Locations>
     {
-        public override void Configure(EntityTypeBuilder<Location> builder)
+        public override void Configure(EntityTypeBuilder<Locations> builder)
         {
             base.Configure(builder);
             builder.Property(e => e.Code).HasMaxLength(50);

@@ -6,12 +6,12 @@ using WineWeb.Shared.Entities;
 
 namespace WineWeb.Shared.Services.Implements
 {
-    public class LocationRepository : GenericRepositoryAsync<Location>, ILocationRepository
+    public class LocationRepository : GenericRepositoryAsync<Locations>, ILocationRepository
     {
-        private readonly DbSet<Location> _user;
+        private readonly DbSet<Locations> _user;
         public LocationRepository(WineContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
-            _user = dbContext.Set<Location>();
+            _user = dbContext.Set<Locations>();
         }
 
     }

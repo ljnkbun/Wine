@@ -1,6 +1,6 @@
 ﻿using Core.Models.Parameters;
 
-namespace WineWeb.Server.Parameters
+namespace WineWeb.Shared.Parameters.Userss
 {
     public class UsersParameter : RequestParameter
     {

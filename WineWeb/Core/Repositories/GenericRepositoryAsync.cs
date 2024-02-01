@@ -25,8 +25,16 @@ namespace Core.Repositories
 
         public virtual async Task<T> AddAsync(T entity)
         {
-            await _dbContext.Set<T>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                await _dbContext.Set<T>().AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             return entity;
         }
 

@@ -1,3 +1,4 @@
+using Core.Behaviours;
 using Core.Middlewares;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -16,7 +17,11 @@ var configuration = new ConfigurationBuilder()
 // Add services to the container.
 builder.Services.AddInfrastructure(configuration);
 builder.Services.AddApplication();
-builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly); });
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+    cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
+});
 builder.Services.AddHealthChecks();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddJob();

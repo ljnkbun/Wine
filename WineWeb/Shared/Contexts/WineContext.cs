@@ -40,7 +40,7 @@ namespace WineWeb.Shared.Contexts
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Locations> Locations { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<Role> Roles { get; set; }

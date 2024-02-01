@@ -1,6 +1,6 @@
 ﻿@page "/users"
 @using System.Net.Http.Json;
-@using WineWeb.Shared.Entities;
+@using WineWeb.Shared.Models.Userss;
 @inject HttpClient Http
 @inject PreloadService loading
 @inject ToastService toastService
@@ -36,7 +36,7 @@
                 <tr>
                     <td width="5%">@user.Code</td>
                     <td width="25%">@user.Name</td>
-                    <td width="10%">@user.UserName</td>
+                    <td width="10%">@user.Username</td>
                     <td width="15%">@user.Password</td>
                     <td width="15%">@user.CreateDate?.ToShortDateString()</td>
                     <td width="10%">@user.UpdateDate?.ToShortDateString()</td>
@@ -61,7 +61,7 @@
 <ConfirmDelete Message="Do you comfirmed?" Url="@($"/api/users/{TargetId}")" CusFunc="User" @ref="modal" />
 
 @code {
-    private Users[]? users;
+    private UsersModel[]? users;
 
     public int PageNumber { get; set; } = 1;
     public int PageSize { get; set; } = 10;
@@ -84,7 +84,7 @@
 
         url = $"{url}?PageSize={PageSize}&PageNumber={PageNumber}";
 
-        var result = await Http.GetFromJsonAsync<Response<Users[]>>(url);
+        var result = await Http.GetFromJsonAsync<Response<UsersModel[]>>(url);
         users = result?.Data;
 
         loading.Hide();

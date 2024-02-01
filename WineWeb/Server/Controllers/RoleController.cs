@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
-using WineWeb.Server.Commands.Userss;
-using WineWeb.Server.Queries.Userss;
-using WineWeb.Shared.Parameters.Userss;
+using WineWeb.Server.Commands.Roles;
+using WineWeb.Server.Queries.Roles;
+using WineWeb.Shared.Parameters.Roles;
 
 namespace WineWeb.Server.Controllers
 {
-    public class UsersController : BaseApiController
+    public class RoleController : BaseApiController
     {
         // GET: api/v1/<controller>
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] UsersParameter filter)
+        public async Task<IActionResult> Get([FromQuery] RoleParameter filter)
         {
-            return Ok(await Mediator.Send(new GetUserssQuery()
+            return Ok(await Mediator.Send(new GetRolesQuery()
             {
                 PageSize = filter.PageSize,
                 PageNumber = filter.PageNumber,
@@ -19,8 +19,6 @@ namespace WineWeb.Server.Controllers
                 ModifiedDate = filter.ModifiedDate,
                 CreatedUserId = filter.CreatedUserId,
                 ModifiedUserId = filter.ModifiedUserId,
-                Username = filter.Username,
-                Password = filter.Password,
                 IsActive = filter.IsActive,
             }));
         }
@@ -29,19 +27,19 @@ namespace WineWeb.Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await Mediator.Send(new GetUsersQuery { Id = id }));
+            return Ok(await Mediator.Send(new GetRoleQuery { Id = id }));
         }
 
         // POST api/v1/<controller>
         [HttpPost]
-        public async Task<IActionResult> Post(CreateUsersCommand command)
+        public async Task<IActionResult> Post(CreateRoleCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
         // PUT api/v1/<controller>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, UpdateUsersCommand command)
+        public async Task<IActionResult> Put(int id, UpdateRoleCommand command)
         {
             if (id != command.Id) return BadRequest();
             return Ok(await Mediator.Send(command));
@@ -51,7 +49,7 @@ namespace WineWeb.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await Mediator.Send(new DeleteUsersCommand { Id = id }));
+            return Ok(await Mediator.Send(new DeleteRoleCommand { Id = id }));
         }
 
     }

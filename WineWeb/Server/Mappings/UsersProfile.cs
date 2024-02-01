@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using WineWeb.Server.Commands.Userss;
-using WineWeb.Server.Models;
-using WineWeb.Server.Parameters;
 using WineWeb.Server.Queries.Userss;
 using WineWeb.Shared.Entities;
+using WineWeb.Shared.Models.Userss;
+using WineWeb.Shared.Parameters.Userss;
 
 namespace WineWeb.Server.Mappings
 {

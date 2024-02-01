@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Core.Models.Responses;
 using MediatR;
-using WineWeb.Server.Models;
-using WineWeb.Server.Parameters;
+using WineWeb.Shared.Models.Userss;
+using WineWeb.Shared.Parameters.Userss;
 using WineWeb.Shared.Services;
 
 namespace WineWeb.Server.Queries.Userss
