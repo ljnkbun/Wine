@@ -13,7 +13,6 @@
 
     <EditForm Model="User" OnValidSubmit="OnValidSubmit">
         <DataAnnotationsValidator />
-
         <div class="row mb-3">
             <label for="inputCode" class="col-sm-2 col-form-label">Code</label>
             <div class="col-sm-10">
@@ -121,6 +120,7 @@
                             Type = ToastType.Danger,
                             Title = "Update User failed",
                             HelpText = $"{DateTime.Now}",
+                            
                         });
                 }
             }

@@ -1,5 +1,6 @@
 using Core.Behaviours;
 using Core.Middlewares;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WineWeb.Shared.Contexts;
@@ -17,9 +18,11 @@ var configuration = new ConfigurationBuilder()
 // Add services to the container.
 builder.Services.AddInfrastructure(configuration);
 builder.Services.AddApplication();
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+    cfg.RegisterServicesFromAssemblyContaining<Program>();
     cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
 });
 builder.Services.AddHealthChecks();

@@ -9,17 +9,17 @@ namespace WineWeb.Server.Validations.Userss
         {
             RuleFor(r => r.Code).NotEmpty().WithMessage("{PropertyName}  is required.")
                  .NotNull()
-                .MaximumLength(500).WithMessage("{PropertyName} must not exceed 500 characters.");
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters.");
             RuleFor(r => r.Name).NotEmpty().WithMessage("{PropertyName}  is required.")
                  .NotNull()
                 .MaximumLength(500).WithMessage("{PropertyName} must not exceed 500 characters.");
             RuleFor(r => r.Username).NotEmpty().WithMessage("{PropertyName}  is required.")
                  .NotNull()
-                .MaximumLength(500).WithMessage("{PropertyName} must not exceed 500 characters.");
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters.");
             RuleFor(r => r.Password).NotEmpty().WithMessage("{PropertyName}  is required.")
                  .NotNull()
                 .MinimumLength(8).WithMessage("Your password length must be at least 8.")
-                .MaximumLength(500).WithMessage("Your password length must not exceed 16.")
+                .MaximumLength(100).WithMessage("Your password length must not exceed 100.")
                 .Matches(@"[A-Z]+").WithMessage("Your password must contain at least one uppercase letter.")
                 .Matches(@"[a-z]+").WithMessage("Your password must contain at least one lowercase letter.")
                 .Matches(@"[0-9]+").WithMessage("Your password must contain at least one number.")
