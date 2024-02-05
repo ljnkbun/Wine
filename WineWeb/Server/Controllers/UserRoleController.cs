@@ -24,10 +24,10 @@ namespace WineWeb.Server.Controllers
         }
 
         // GET api/v1/<controller>/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("ByUserId")]
+        public async Task<IActionResult> Get(int userId)
         {
-            return Ok(await Mediator.Send(new GetUserRoleQuery { Id = id }));
+            return Ok(await Mediator.Send(new GetUserRoleQuery { UserId = userId }));
         }
 
         // POST api/v1/<controller>

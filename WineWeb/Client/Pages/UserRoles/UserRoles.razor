@@ -5,9 +5,9 @@
 @inject PreloadService loading
 @inject ToastService toastService
 
-<PageTitle>UserRole Management</PageTitle>
+<PageTitle>UserRoleManagement</PageTitle>
 
-<h3> UserRole Management</h3>
+<h3> UserRoleManagement</h3>
 
 <Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="/UserRole/detail"> Add </Button>
 
@@ -17,7 +17,7 @@
             <th>Code</th>
             <th>Full Name</th>
             <th>Username</th>
-            <th>Password</th>
+            <th>Role</th>
             <th>CreateDate</th>
             <th>UpdateDate</th>
         </tr>
@@ -39,19 +39,22 @@
                     <td width="10%">@user.UsersModel?.Username</td>
                     <td width="25%">
                         @{
-                            foreach (var role in user.RoleModels)
+                            @if (user?.RoleModels?.Any() ?? false)
                             {
-                                <p>@role.Code</p>
+                                foreach (var role in user.RoleModels)
+                                {
+                                    <p>@role.Code</p>
+                                }
                             }
                         }
                     </td>
-                    <td width="15%">@user.CreateDate?.ToShortDateString()</td>
+                    <td width="15%">@user!.CreateDate?.ToShortDateString()</td>
                     <td width="10%">@user.UpdateDate?.ToShortDateString()</td>
                     <td width="10%">
                         <div>
-                            <Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="@($"/UserRole /detail/{user.Id}")" Model="@user"> Edit </Button>
+                            <Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="@($"/UserRole/detail/{user.Id}")" Model="@user"> Edit </Button>
                             <Button Type="ButtonType.Button" Color="ButtonColor.Danger" Outline="true" Model="@modal"
-                            @onclick="()=>{ TargetId=user.Id;modal.OnShowModalClick();}">
+                            @onclick="async ()=>{ TargetId=user.UsersModel.Id;await modal.OnShowModalClick();}">
                                 Delete
                             </Button>
                         </div>
@@ -65,7 +68,7 @@
         }
     </tbody>
 </table>
-<ConfirmDelete Message="Do you comfirmed?" Url="@($"/api/UserRole /{TargetId}")" CusFunc="User" @ref="modal" />
+<ConfirmDelete Message="Do you comfirmed?" Url="@($"/api/UserRole/{TargetId}")" CusFunc="User" @ref="modal" />
 
 @code {
     private UserRoleModel[]? UserRole;

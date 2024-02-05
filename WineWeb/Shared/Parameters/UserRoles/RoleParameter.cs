@@ -4,6 +4,6 @@ namespace WineWeb.Shared.Parameters.UserRoles
 {
     public class UserRoleParameter : RequestParameter
     {
-        public string Code { get; set; }
+        public string? Code { get; set; }
     }
 }

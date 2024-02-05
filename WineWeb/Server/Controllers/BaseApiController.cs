@@ -7,7 +7,7 @@ namespace WineWeb.Server.Controllers
     [Route("api/[controller]")]
     public abstract class BaseApiController : ControllerBase
     {
-        private IMediator _mediator;
+        private IMediator? _mediator;
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
     }
 }

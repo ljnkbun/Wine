@@ -8,8 +8,8 @@ namespace WineWeb.Server.Commands.Locations
 {
     public class CreateLocationCommand : IRequest<Response<int>>
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
     }
     public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand, Response<int>>
     {

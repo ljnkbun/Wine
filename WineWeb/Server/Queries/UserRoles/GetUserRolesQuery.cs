@@ -37,7 +37,7 @@ namespace WineWeb.Server.Queries.UserRoles
         public async Task<PagedResponse<IReadOnlyList<UserRoleModel>>> Handle(GetUserRolesQuery request, CancellationToken cancellationToken)
         {
             var validFilter = _mapper.Map<UserRoleParameter>(request);
-            return await _repository.GetModelPagedReponseAsync<UserRoleParameter, UserRoleModel>(validFilter);
+            return await _repository.GetCustomModelPagedReponseAsync<UserRoleParameter, UserRoleModel>(validFilter);
         }
     }
 }

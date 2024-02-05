@@ -40,7 +40,7 @@
                         <div>
                             <Button Type="ButtonType.Link" Color="ButtonColor.Success" Outline="true" To="@($"/Location/detail/{user.Id}")" Model="@user"> Edit </Button>
                             <Button Type="ButtonType.Button" Color="ButtonColor.Danger" Outline="true" Model="@modal"
-                            @onclick="()=>{ TargetId=user.Id;modal.OnShowModalClick();}">
+                            @onclick="async ()=>{ TargetId=user.Id;await modal.OnShowModalClick();}">
                                 Delete
                             </Button>
                         </div>

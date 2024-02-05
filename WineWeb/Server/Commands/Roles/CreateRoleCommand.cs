@@ -8,8 +8,8 @@ namespace WineWeb.Server.Commands.Roles
 {
     public class CreateRoleCommand : IRequest<Response<int>>
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
     }
     public class CreateRoleCommandHandler : IRequestHandler<CreateRoleCommand, Response<int>>
     {

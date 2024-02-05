@@ -7,8 +7,8 @@ namespace WineWeb.Server.Commands.Roles
     public class UpdateRoleCommand : IRequest<Response<int>>
     {
         public int Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
     }
     public class UpdateRoleCommandHandler : IRequestHandler<UpdateRoleCommand, Response<int>>
     {
@@ -21,8 +21,8 @@ namespace WineWeb.Server.Commands.Roles
         {
             var entity = await _repository.GetByIdAsync(command.Id);
             if (entity == null) return new($"Role Not Found.");
-            entity.Code = command.Code;
-            entity.Name = command.Name;
+            entity.Code = command.Code!;
+            entity.Name = command.Name!;
 
             await _repository.UpdateAsync(entity);
             return new Response<int>(entity.Id);
