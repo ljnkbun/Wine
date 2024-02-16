@@ -120,7 +120,7 @@ namespace Core.Repositories
                     await _dbContext.SaveChangesAsync();
                     await transaction.CommitAsync();
                 }
-                catch
+                catch (Exception e)
                 {
                     result = false;
                     await transaction.RollbackAsync();

@@ -41,7 +41,7 @@ namespace WineWeb.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateUserRoleCommand command)
         {
-            if (id != command.Id) return BadRequest();
+            if (id != command.UsersId) return BadRequest();
             return Ok(await Mediator.Send(command));
         }
 

@@ -11,18 +11,15 @@ namespace WineWeb.Shared.TypeConfigurations
         {
             base.Configure(builder);
             builder.Property(e => e.Code).HasMaxLength(50);
-            builder.HasIndex(e => e.Code).IsUnique();
             builder.Property(e => e.Name).HasMaxLength(100);
 
             builder.HasOne(s => s.Users)
               .WithMany(g => g.UserRoles)
-              .HasForeignKey(s => s.UsersId)
-              .OnDelete(DeleteBehavior.Cascade);
+              .HasForeignKey(s => s.UsersId);
 
             builder.HasOne(s => s.Role)
               .WithMany(g => g.UserRoles)
-              .HasForeignKey(s => s.RoleId)
-              .OnDelete(DeleteBehavior.Cascade);
+              .HasForeignKey(s => s.RoleId);
         }
     }
 }

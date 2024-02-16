@@ -26,7 +26,7 @@ namespace WineWeb.Server.Commands.Userss
             if (entity == null) return new($"Users Not Found.");
             entity.Code = command.Code!;
             entity.Name = command.Name!;
-            entity.UserName = command.Username!;
+            entity.Username = command.Username!;
             entity.Password = command.Password!;
             entity.Email = command.Email!;
 

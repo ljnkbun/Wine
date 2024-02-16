@@ -12,8 +12,8 @@ using WineWeb.Shared.Contexts;
 namespace WineWeb.Shared.Migrations
 {
     [DbContext(typeof(WineContext))]
-    [Migration("20240129071703_InitDB")]
-    partial class InitDB
+    [Migration("20240216041809_modifyTblUsers")]
+    partial class modifyTblUsers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,6 @@ namespace WineWeb.Shared.Migrations
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
@@ -83,7 +82,7 @@ namespace WineWeb.Shared.Migrations
                     b.ToTable("Category", (string)null);
                 });
 
-            modelBuilder.Entity("WineWeb.Shared.Entities.Location", b =>
+            modelBuilder.Entity("WineWeb.Shared.Entities.Locations", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -133,7 +132,7 @@ namespace WineWeb.Shared.Migrations
                     b.HasIndex("Code")
                         .IsUnique();
 
-                    b.ToTable("Location", (string)null);
+                    b.ToTable("Locations", (string)null);
                 });
 
             modelBuilder.Entity("WineWeb.Shared.Entities.Role", b =>
@@ -222,6 +221,10 @@ namespace WineWeb.Shared.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("UsersId");
+
                     b.ToTable("UserRoles");
                 });
 
@@ -247,7 +250,6 @@ namespace WineWeb.Shared.Migrations
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -262,7 +264,6 @@ namespace WineWeb.Shared.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -275,7 +276,6 @@ namespace WineWeb.Shared.Migrations
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -285,6 +285,35 @@ namespace WineWeb.Shared.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("WineWeb.Shared.Entities.UserRole", b =>
+                {
+                    b.HasOne("WineWeb.Shared.Entities.Role", "Role")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WineWeb.Shared.Entities.Users", "Users")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("WineWeb.Shared.Entities.Role", b =>
+                {
+                    b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("WineWeb.Shared.Entities.Users", b =>
+                {
+                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

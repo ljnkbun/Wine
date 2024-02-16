@@ -2,7 +2,9 @@
 @page "/UserRole/detail/{UserId:int}"
 @using System.Net.Http.Json;
 @using WineWeb.Shared.Entities;
+@using WineWeb.Shared.Models.Roles;
 @using WineWeb.Shared.Models.UserRoles;
+@using WineWeb.Shared.Models.Userss;
 @inject HttpClient Http
 @inject ToastService toastService
 @inject PreloadService loading
@@ -31,10 +33,15 @@
         </div>
         <div class="row mb-3">
             <div class="row mb-3">
-                <label for="inputName" class="col-sm-2 col-form-label">UserName</label>
+                <label for="inputName" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
-                    <InputText type="text" class="form-control" id="username" @bind-Value="@UserRole.UsersModel!.Username" disabled />
-                    <ValidationMessage For="@(() => UserRole.UsersModel!.Username)" />
+                    <AutoComplete @bind-Value="@username" name="username"
+                                  TItem="UsersModel"
+                                  DataProvider="HandleInput"
+                                  PropertyName="Username"
+                                  Placeholder="Search user..."
+                                  OnChanged="(UsersModel usersModel) => SelectUser(usersModel)" />
+                    <input type="hidden" value="@UserId" name="usersId" />
                 </div>
             </div>
         </div>
@@ -43,11 +50,24 @@
                 <label for="inputName" class="col-sm-2 col-form-label">Role</label>
                 <div class="col-sm-10">
                     @{
-                        @if (UserRole.RoleModels?.Any() ?? false)
+                        if (UserRole.RoleModels?.Any() ?? false)
                         {
                             foreach (var role in UserRole.RoleModels)
                             {
-                                <InputRadio class="form-control" @bind-Value="@role.Code" disabled=@ReadOnlyMode />
+                                <input type="radio" name="roles" autocomplete="off"
+                                       checked="@(UserRole.RoleModels.Contains(role))"
+                                @onchange="()=>SelectRoles(role)"> @role.Code
+                                <input type="hidden" value="@role.Id" name="roleIds" />
+                            }
+                        }
+                        else
+                        {
+                            foreach (var role in roles)
+                            {
+                                <input type="radio" name="roles" autocomplete="off"
+                                       checked="@(UserRole.RoleModels.Contains(role))"
+                                @onchange="()=>SelectRoles(role)"> @role.Code
+                                <input type="hidden" value="@role.Id" name="roleIds" />
                             }
                         }
                     }
@@ -69,16 +89,69 @@
 
 @code {
     [Parameter] public int UserId { get; set; }
-    public UserRoleModel UserRole { get; set; } = new();
+    [Parameter] public List<int> RoleIds { get; set; } = new();
+    [Parameter] public UserRoleModel UserRole { get; set; } = new();
     public bool ReadOnlyMode { get; set; } = false;
 
     public EventCallback OnValidSubmit { get; set; }
     private Button btnSave;
 
+    public List<UsersModel> userss { get; set; } = new();
+    public List<RoleModel> roles { get; set; } = new();
+    string? username;
+    string? filter;
+
     protected override async Task OnInitializedAsync()
     {
+        loading.Show(SpinnerColor.Dark);
         await base.OnInitializedAsync();
+        await FetchRoles();
         UserRole = await GetUserRole(UserId);
+        UserRole.UsersId = UserId;
+        loading.Hide();
+    }
+
+    private async Task FetchRoles()
+    {
+        var url = "/api/Role";
+
+        url = $"{url}?PageSize=-1&PageNumber=1";
+
+        var result = await Http.GetFromJsonAsync<Response<List<RoleModel>>>(url);
+        roles = result?.Data;
+    }
+
+    private void SelectRoles(RoleModel role)
+    {
+        if (UserRole.RoleModels.Contains(role))
+        {
+            UserRole.RoleModels.Remove(role);
+            RoleIds.Remove(role.Id);
+        }
+        else
+        {
+            UserRole.RoleModels.Add(role);
+            RoleIds.Add(role.Id);
+        }
+    }
+
+    private async Task<AutoCompleteDataProviderResult<UsersModel>> HandleInput(AutoCompleteDataProviderRequest<UsersModel> request)
+    {
+        filter = request.Filter.Value;
+        if (filter?.Length > 2)
+        {
+            var rs = await Http.GetFromJsonAsync<Response<List<UsersModel>>>($"/api/Users?Username={filter}");
+            userss = rs?.Data;
+        }
+        return await Task.FromResult(new AutoCompleteDataProviderResult<UsersModel> { Data = userss, TotalCount = userss.Count() });
+    }
+
+
+    private void SelectUser(UsersModel usersModel)
+    {
+        UserRole.UsersModel = usersModel;
+        UserId = usersModel.Id;
+        userss = null!;
     }
 
     private async Task<UserRoleModel> GetUserRole(int userId)
@@ -86,7 +159,7 @@
         var url = $"/api/UserRole/ByUserId?userId={userId}";
 
         var result = await Http.GetFromJsonAsync<Response<UserRoleModel>>(url);
-        return result?.Data ?? new();
+        return result?.Data ?? new() { UsersModel = new() { Username = string.Empty }, RoleModels = new List<RoleModel>() };
     }
 
     private async Task<int> SubmitForm()

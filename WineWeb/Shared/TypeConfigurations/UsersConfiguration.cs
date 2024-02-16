@@ -12,7 +12,7 @@ namespace WineWeb.Shared.TypeConfigurations
             builder.Property(e => e.Code).HasMaxLength(50);
             builder.HasIndex(e => e.Code).IsUnique();
             builder.Property(e => e.Name).HasMaxLength(100);
-            builder.Property(e => e.UserName).HasMaxLength(100);
+            builder.Property(e => e.Username).HasMaxLength(100);
             builder.Property(e => e.Password).HasMaxLength(100);
             builder.Property(e => e.Email).HasMaxLength(500);
         }

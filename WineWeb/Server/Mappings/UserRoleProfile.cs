@@ -13,7 +13,10 @@ namespace WineWeb.Server.Mappings
         {
             CreateMap<UserRole, UserRoleModel>()
                 .ReverseMap();
-            CreateMap<CreateUserRoleCommand, UserRole>().ReverseMap();
+            CreateMap<CreateUserRoleCommand, UserRole>()
+                .ForMember(x => x.Users, p => p.MapFrom(o => o.UsersModel))
+                .ForMember(x => x.UsersId, p => p.MapFrom(o => o.UsersId))
+                .ReverseMap();
             CreateMap<GetUserRolesQuery, UserRoleParameter>().ReverseMap();
         }
 

@@ -14,15 +14,15 @@ namespace WineWeb.Shared.Services.Implements
             _user = dbContext.Set<Users>();
         }
 
-        public async Task<Users> Authen(string username, string password)
+        public async Task<Users> Authen(string Username, string password)
         {
 #if DEBUG
-            if (username == "admin" && password == "admin")
+            if (Username == "admin" && password == "admin")
             {
-                return new Users() { UserName = username, Password = password };
+                return new Users() { Username = Username, Password = password };
             }
 #endif
-            var user = await _user.FirstOrDefaultAsync(x => x.UserName == username && x.Password == password);
+            var user = await _user.FirstOrDefaultAsync(x => x.Username == Username && x.Password == password);
             if (user != null) return user;
 
             return null!;
