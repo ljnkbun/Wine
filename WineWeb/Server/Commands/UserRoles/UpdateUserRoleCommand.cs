@@ -32,7 +32,7 @@ namespace WineWeb.Server.Commands.UserRoles
         }
         public async Task<Response<int>> Handle(UpdateUserRoleCommand command, CancellationToken cancellationToken)
         {
-            var entity = await _usersRepository.GetByIdAsync(command.Id);
+            var entity = await _usersRepository.GetDeepByIdAsync(command.UsersId!.Value);
             if (entity == null) return new($"UserRole Not Found.");
             entity.Code = command.Code!;
             entity.Name = command.Name!;
@@ -41,11 +41,13 @@ namespace WineWeb.Server.Commands.UserRoles
             {
                 entity.UserRoles.Add(new()
                 {
+                    Code = new Guid().ToString(),
+                    Name = new Guid().ToString(),
                     Users = _mapper.Map<Users>(command.UsersModel),
                     Role = _mapper.Map<Role>(role),
                 });
             }
-            await _usersRepository.UpdateAsync(entity);
+            await _usersRepository.UpdateUserAsync(entity);
             return new Response<int>(entity.Id);
         }
     }
